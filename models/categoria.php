@@ -11,12 +11,24 @@ public function __construct($_nome, $_icona)
     $this->icona = $_icona;
   }
 
-    public function getCategoria()
+    public function getNome()
     {
-        return [
-            'nome' => $this->nome,
-            'icona' => $this->icona,
-        ];
+        return $this->nome;
+    }
+
+    public function setNome($_nome)
+    {
+        $this->nome = $_nome;
+    }
+
+    public function getIcona()
+    {
+        return $this->icona;
+    }
+
+    public function setIcona($_icona)
+    {
+        $this->icona = $_icona;
     }
 
 }

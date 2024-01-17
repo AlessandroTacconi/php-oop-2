@@ -17,11 +17,9 @@ $paperellaDiGomma = new Gioco(8.00, "Paperella di gomma per Cani",  $cani, 'pape
 $cucciaPerCani = new Cuccia(29.99, "Cuccia per Cani", $cani, 'cuccia-cani.jpg');
 $cucciaPerGatti = new Cuccia(19.99, "Cuccia per Gatti", $gatti, 'cuccia-gatti.jpg');
 
-
-
 $products = [$croccantiniCani, $carneGatti, $paperellaDiGomma, $cucciaPerCani, $cucciaPerGatti];
 
-$categories = [$cani, $gatti];
+
 ?>
 
 
@@ -37,15 +35,17 @@ $categories = [$cani, $gatti];
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Il mio negozio</h1>
   <div>
     <?php foreach ($products as $prodotto): ?>
-        <h2><?php echo $prodotto->getProdotto()['articolo']; ?></h2>
-        <p>Prezzo: <?php echo $prodotto->getProdotto()['prezzo']; ?>€</p>
-        <p>Categoria: <?php echo $prodotto->getProdotto()['categoria']->getCategoria()['icona']; ?></p>
+        <h2><?php echo $prodotto->getArticolo(); ?></h2>
+        <p>Prezzo: <?php echo $prodotto->getPrezzo(); ?>€</p>
+        <p>Categoria: <?php echo $prodotto->getCategoria()->getIcona(); ?></p>
         </p>
 
 
-        <img src="img/<?php echo $prodotto->getProdotto()['immagine']; ?>" alt="<?php echo $prodotto->getProdotto()['articolo']; ?>">
+        <img src="img/<?php echo $prodotto->getImmagine(); ?>" alt="<?php echo $prodotto->getArticolo(); ?>">
+
         <hr>
     <?php endforeach; ?>
 </div>
