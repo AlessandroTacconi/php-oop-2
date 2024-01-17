@@ -33,21 +33,25 @@ $products = [$croccantiniCani, $carneGatti, $paperellaDiGomma, $cucciaPerCani, $
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
   <h1>Il mio negozio</h1>
-  <div>
-    <?php foreach ($products as $prodotto): ?>
+
+  <div class="row">
+          <?php foreach ($products as $prodotto): ?>
+    <div class="col-4">
+
         <h2><?php echo $prodotto->getArticolo(); ?></h2>
         <p>Prezzo: <?php echo $prodotto->getPrezzo(); ?>€</p>
         <p>Categoria: <?php echo $prodotto->getCategoria()->getIcona(); ?></p>
-        </p>
-
-
         <img src="img/<?php echo $prodotto->getImmagine(); ?>" alt="<?php echo $prodotto->getArticolo(); ?>">
-
         <hr>
-    <?php endforeach; ?>
+  
+    </div>
+        <?php endforeach; ?>
+  </div>
 </div>
 </body>
 </html>

@@ -1,13 +1,16 @@
 <?php
+require_once 'TraitNome.php';
+
 
 
 class Categoria {
+  use TraitNome;
     private $nome;
     private $icona;
 
 public function __construct($_nome, $_icona)
   {
-    $this->nome = $_nome;
+    $this->setNome($_nome);
     $this->icona = $_icona;
   }
 

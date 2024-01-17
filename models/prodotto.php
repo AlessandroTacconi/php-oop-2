@@ -1,15 +1,17 @@
 <?php
+require_once 'TraitNome.php';
 
 class Prodotto {
+  use TraitNome;
     private $prezzo;
-    private $articolo;
+    // private $articolo;
     private $categoria; // Cani o Gatti
     private $immagine;
 
 public function __construct($_prezzo, $_articolo, $_categoria, $_immagine)
   {
     $this->prezzo = $_prezzo;
-    $this->articolo = $_articolo;
+    $this->setNome($_articolo);
     $this->categoria = $_categoria;
     $this->immagine = $_immagine;
   }
@@ -26,12 +28,12 @@ public function __construct($_prezzo, $_articolo, $_categoria, $_immagine)
 
     public function getArticolo()
     {
-        return $this->articolo;
+        return $this->getNome();
     }
 
     public function setArticolo($_articolo)
     {
-        $this->articolo = $_articolo;
+        $this->setNome($_articolo);
     }
 
     public function getCategoria()
@@ -53,5 +55,7 @@ public function __construct($_prezzo, $_articolo, $_categoria, $_immagine)
     {
         $this->immagine = $_immagine;
     }
+
+
 
 }
